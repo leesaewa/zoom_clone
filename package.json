@@ -1,0 +1,35 @@
+{
+  "name": "zoom_clone",
+  "version": "1.0.0",
+  "description": "Zoom Clone using NodeJS, WebRTC and Websockets.",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leesaewa/zoom_clone.git"
+  },
+  "author": "saewa lee<saewa0424@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leesaewa/zoom_clone/issues"
+  },
+  "homepage": "https://github.com/leesaewa/zoom_clone#readme",
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.3.0",
+    "express": "^4.18.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.1",
+    "ws": "^8.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "nodemon": "^2.0.16"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  }
+}
