@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&family=Noto+Sans+KR:wght@100;400;700&display=swap");
+
+/*
+  Variable
+*/
+$green: #2a623d;
+$grey: #aaaaaa;
+$white: #ffffff;
+$black: #000000;
+
+$radius: 50px;
+$msgR: 10px;
+$transition: all 0.5s ease;
+$uppercase: uppercase;
+
+/**/
+@mixin widthCommon {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+@mixin flexbox($flexw: nowrap, $align: flex-start) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $align;
+  flex-wrap: $flexw;
+}
+
+%input {
+  font-size: 1em;
+  color: $green;
+  font-weight: bold;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  padding: 0.4rem 2rem;
+}
+
+/*
+  common
+*/
+::selection {
+  background-color: $green;
+  color: $white;
+}
+.script {
+  font-family: "Allison", cursive;
+}
+body {
+  background-color: $green;
+}
+body,
+ol,
+ul {
+  line-height: 1;
+  color: $white;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+button {
+  all: unset;
+  font-size: 1em;
+  text-transform: $uppercase;
+  background: $white;
+  border: 1px solid $white;
+  color: $green;
+  font-weight: bold;
+  border-radius: $radius;
+  padding: 0.4rem 2rem 0.6rem;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    color: $white;
+    background: $green;
+  }
+}
+input[type="text"] {
+  width: 50%;
+  @extend %input;
+
+  &::placeholder {
+    color: $green;
+  }
+  &:focus {
+    outline-color: $green;
+  }
+}
+
+.line {
+  @include flexbox();
+
+  img {
+    filter: brightness(3);
+  }
+  hr {
+    border-bottom: 1px solid $white;
+    flex: 1 1;
+    position: relative;
+    opacity: 0.2;
+  }
+}
+
+header {
+  padding-top: 3em;
+  @include widthCommon();
+
+  h1 {
+    font-size: 4em;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 2em;
+  }
+
+  #room-list {
+    margin-bottom: 2rem;
+  }
+}
+
+main {
+  @include widthCommon();
+
+  #wrapper {
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+
+  #call {
+    h4 {
+      font-size: 16px;
+    }
+    .text {
+      line-height: 2rem;
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+
+    #myStream {
+      @include flexbox($flexw: wrap);
+      margin: 4rem 0 2rem;
+
+      video {
+        width: 48%;
+        height: auto;
+      }
+
+      div {
+        margin: 2rem 0;
+        width: 100%;
+
+        button {
+          margin-right: 20px;
+        }
+        #cameras {
+          width: 30%;
+          @extend %input;
+
+          &:focus {
+            outline-color: $green;
+          }
+        }
+      }
+    }
+  }
+  /*message*/
+}
+#message-box {
+  margin-bottom: 6rem;
+  ul {
+    background: $white;
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-top-left-radius: $msgR;
+    border-top-right-radius: $msgR;
+
+    li {
+      position: relative;
+
+      .row-container {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        p {
+          background: $grey;
+          border-top-right-radius: 14px;
+          border-bottom-left-radius: 14px;
+          border-bottom-right-radius: 14px;
+          padding: 10px;
+          font-size: 12px;
+          margin: 0 5px 0 0;
+
+          &.yel-bbl {
+            background: $green;
+            border-top-right-radius: 0;
+            border-top-left-radius: 14px;
+            margin: 0 0 0 5px;
+          }
+        }
+        div {
+          width: 150px;
+          text-align: left;
+
+          span {
+            font-size: 10px;
+            display: block;
+            color: $black;
+          }
+        }
+
+        &.right-row {
+          justify-content: end;
+          flex-direction: row-reverse;
+
+          div {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  form {
+    border-top: 1px solid $grey;
+    background: $white;
+    border-bottom-left-radius: $msgR;
+    border-bottom-right-radius: $msgR;
+    padding: 5px;
+    @include flexbox($align: inherit);
+
+    textarea {
+      resize: none;
+      border-radius: $radius;
+      width: 100%;
+      padding: 5px 1rem;
+      color: $green;
+      font-weight: bold;
+
+      &:focus {
+        outline-color: $green;
+        background-color: $grey;
+        color: $white;
+      }
+    }
+    button {
+      background-color: $green;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        border: 1px solid $green;
+        color: $green;
+      }
+    }
+  }
+}

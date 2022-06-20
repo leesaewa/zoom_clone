@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&family=Noto+Sans+KR:wght@100;400;700&display=swap");
+/*
+  Variable
+*/
+/**/
+input[type="text"], main #call #myStream div #cameras {
+  font-size: 1em;
+  color: #2a623d;
+  font-weight: bold;
+  border: 1px solid #aaaaaa;
+  border-radius: 50px;
+  padding: 0.4rem 2rem;
+}
+
+/*
+  common
+*/
+::-moz-selection {
+  background-color: #2a623d;
+  color: #ffffff;
+}
+::selection {
+  background-color: #2a623d;
+  color: #ffffff;
+}
+
+.script {
+  font-family: "Allison", cursive;
+}
+
+body {
+  background-color: #2a623d;
+}
+
+body,
+ol,
+ul {
+  line-height: 1;
+  color: #ffffff;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+button {
+  all: unset;
+  font-size: 1em;
+  text-transform: uppercase;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #2a623d;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 0.4rem 2rem 0.6rem;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  color: #ffffff;
+  background: #2a623d;
+}
+
+input[type="text"] {
+  width: 50%;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: #2a623d;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #2a623d;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: #2a623d;
+}
+
+input[type="text"]::placeholder {
+  color: #2a623d;
+}
+
+input[type="text"]:focus {
+  outline-color: #2a623d;
+}
+
+.line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.line img {
+  -webkit-filter: brightness(3);
+          filter: brightness(3);
+}
+
+.line hr {
+  border-bottom: 1px solid #ffffff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  position: relative;
+  opacity: 0.2;
+}
+
+header {
+  padding-top: 3em;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4em;
+  margin: 2rem 0;
+}
+
+header p {
+  font-size: 2em;
+}
+
+header #room-list {
+  margin-bottom: 2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  /*message*/
+}
+
+main #wrapper h3 {
+  font-size: 1.5em;
+}
+
+main #call h4 {
+  font-size: 16px;
+}
+
+main #call .text {
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+main #call #myStream {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 4rem 0 2rem;
+}
+
+main #call #myStream video {
+  width: 48%;
+  height: auto;
+}
+
+main #call #myStream div {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+main #call #myStream div button {
+  margin-right: 20px;
+}
+
+main #call #myStream div #cameras {
+  width: 30%;
+}
+
+main #call #myStream div #cameras:focus {
+  outline-color: #2a623d;
+}
+
+#message-box {
+  margin-bottom: 6rem;
+}
+
+#message-box ul {
+  background: #ffffff;
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#message-box ul li {
+  position: relative;
+}
+
+#message-box ul li .row-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#message-box ul li .row-container p {
+  background: #aaaaaa;
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  padding: 10px;
+  font-size: 12px;
+  margin: 0 5px 0 0;
+}
+
+#message-box ul li .row-container p.yel-bbl {
+  background: #2a623d;
+  border-top-right-radius: 0;
+  border-top-left-radius: 14px;
+  margin: 0 0 0 5px;
+}
+
+#message-box ul li .row-container div {
+  width: 150px;
+  text-align: left;
+}
+
+#message-box ul li .row-container div span {
+  font-size: 10px;
+  display: block;
+  color: #000000;
+}
+
+#message-box ul li .row-container.right-row {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#message-box ul li .row-container.right-row div {
+  text-align: right;
+}
+
+#message-box form {
+  border-top: 1px solid #aaaaaa;
+  background: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#message-box form textarea {
+  resize: none;
+  border-radius: 50px;
+  width: 100%;
+  padding: 5px 1rem;
+  color: #2a623d;
+  font-weight: bold;
+}
+
+#message-box form textarea:focus {
+  outline-color: #2a623d;
+  background-color: #aaaaaa;
+  color: #ffffff;
+}
+
+#message-box form button {
+  background-color: #2a623d;
+  color: #ffffff;
+}
+
+#message-box form button:hover {
+  background-color: #ffffff;
+  border: 1px solid #2a623d;
+  color: #2a623d;
+}

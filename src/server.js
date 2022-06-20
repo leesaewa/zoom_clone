@@ -15,14 +15,46 @@ const handleListen = () => console.log(`Listening on http://localhost:3000`);
 const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
-wsServer.on("connection", (socket) => {
-  socket.on("join_room", (roomName, done) => {
-    socket.join(roomName);
-    done();
-    socket.to(roomName).emit("welcome");
+function publicRooms() {
+  const {
+    sockets: {
+      adapter: { sids, rooms },
+    },
+  } = wsServer;
+  const publicRooms = [];
+  rooms.forEach((_, key) => {
+    if (sids.get(key) === undefined) {
+      publicRooms.push(key);
+    }
   });
+  return publicRooms;
+}
+
+wsServer.on("connection", (socket) => {
+  socket.on("join_room", (roomName) => {
+    if (wsServer.sockets.adapter.rooms.get(roomName)?.size === 2) {
+      socket.emit("room_full");
+    } else {
+      socket.join(roomName);
+      socket.to(roomName).emit("welcome");
+      wsServer.sockets.emit("room_change", publicRooms());
+    }
+  });
+
   socket.on("offer", (offer, roomName) => {
     socket.to(roomName).emit("offer", offer);
+  });
+
+  socket.on("answer", (answer, roomName) => {
+    socket.to(roomName).emit("answer", answer);
+  });
+
+  socket.on("ice", (ice, roomName) => {
+    socket.to(roomName).emit("ice", ice);
+  });
+
+  socket.on("disconnect", () => {
+    wsServer.sockets.emit("room_change", publicRooms());
   });
 });
 
