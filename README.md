@@ -27,9 +27,9 @@ https://codesandbox.io/s/socketio-starter-forked-hvwni2
 
 ### socket.io로 채팅 구현
 
-- server.js ->
-- views/home.pug
-- public/js/app.js
+- server[chat].js ->
+- views/home[chat].pug
+- public/js/app[chat].js
 
 ---
 
@@ -37,6 +37,6 @@ https://codesandbox.io/s/socketio-starter-forked-hvwni2
 
 ### websocket으로 구현
 
-- server.js
-- views/home.pug
-- public/js/app.js
+- server[no_socket.io].js
+- views/home[no_socket.io].pug
+- public/js/app[no_socket.io].js
