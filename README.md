@@ -1,5 +1,8 @@
 # zoom clone
 
+# Preview
+<img src="https://user-images.githubusercontent.com/97646713/210237215-bd21bbf0-be00-43ea-ba06-c11b8d62e409.jpg">
+
 ## ...basic
 
 ### socket.io로 화상통화 구현
